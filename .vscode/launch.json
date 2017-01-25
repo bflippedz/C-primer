@@ -1,0 +1,27 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "C++ Launch (Windows)",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"cwd": "D:\\c++primer",
+			"program": "D:\\c++primer\\Bu_out\\bflipped.exe",
+			"externalConsole": true,
+			"logging": {
+				"moduleLoad": false,
+				"trace": false
+			}
+		},
+		{
+			"name": "C++ Launch",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "D:\\c++primer\\Bu_out\\bflipped.exe",
+			"args": [
+				"arg1",
+				"arg2"
+			]
+		}
+	]
+}

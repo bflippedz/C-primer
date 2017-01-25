@@ -1,0 +1,9 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "command": "Bu_batch\\build.bat",
+  // 对应command参数，是否是一个命令，否则为执行文件路径
+  "isShellCommand": false,
+  "showOutput": "always"
+}
