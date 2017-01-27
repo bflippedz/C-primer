@@ -1,4 +1,5 @@
 > 指令和内容之间要有一个空格！
+
 ## 6.1实参是形参的初始值
 
 
@@ -20,10 +21,11 @@
    static size_t num = 0;
    return num++;
  }
+```
 
 ## 6.14
 - 需要改变值的都是传引用
-- 但是比如说传入迭代器遍历的时候需要传值进去
+- 但是比如说传入迭代器遍历的时候需要传值进去 Page95 说了我们不清楚不在意迭代器的准确类型
 
 ```cpp
 void print(auto begin,auto end){
@@ -31,8 +33,21 @@ void print(auto begin,auto end){
     std::cout<<*it<<std::endl;
   }
 }
+```
 
 ## 6.15
 - c是可以用字面值初始化的
 - s是普通引用没什么影响
 - occurs常量引用没法改变值了
+
+## 6.16
+```cpp
+bool is_empty(const string& s){return s.empty();}
+```
+
+## 6.18
+```cpp
+bool compare(matrix &,matrix &);
+vector<int> change_val(int, vector<int>::iterator);
+```
+

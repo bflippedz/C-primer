@@ -44,10 +44,38 @@ template <typename T>
 void resetRef(T& val) {
   val = 0;
 }
+// ex 6.17
+void to_lowercase(std::string& str) {
+  for (auto& ch : str) {
+    ch = tolower(ch);
+  }
+}
+bool anyUpper(const std::string& str) {
+  for (auto ch : str) {
+    if (isupper(ch)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+// ex 6.21
+int biggerOne(int const a, const int* b) { return a > *b ? a : *b; }
+
+// ex 6.22
+void swapAddress(int** a, int** b) {
+  int* temp = *b;
+  *b = *a;
+  *a = temp;
+}
 
 int main() {
   int a = 0, b = 2;
-  swapRef(a, b);
-  std::cout << a << " " << b << std::endl;
+  int* c = &a;
+  int* d = &b;
+  swapAddress(&c, &d);
+
+  std::cout << *c << " " << *d << std::endl;
   system("pause");
 }
