@@ -1,6 +1,6 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
-
+#include <vector>
 double fact(int val) {
   if (val >= 0) {
     return val == 1 ? 1 : val * fact(val - 1);
@@ -44,10 +44,71 @@ template <typename T>
 void resetRef(T& val) {
   val = 0;
 }
-
-int main() {
-  int a = 0, b = 2;
-  swapRef(a, b);
-  std::cout << a << " " << b << std::endl;
-  system("pause");
+// ex 6.17
+void to_lowercase(std::string& str) {
+  for (auto& ch : str) {
+    ch = tolower(ch);
+  }
 }
+bool anyUpper(const std::string& str) {
+  for (auto ch : str) {
+    if (isupper(ch)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+// ex 6.21
+int biggerOne(int const a, const int* b) { return a > *b ? a : *b; }
+
+// ex 6.22
+void swapAddress(int** a, int** b) {
+  int* temp = *b;
+  *b = *a;
+  *a = temp;
+}
+void swapAddress(int*& lft, int*& rht) {
+  auto temp = lft;
+  lft = rht;
+  rht = temp;
+}
+
+// ex 6.33
+template <class T>
+void print_vector(T first, T end) {
+  if (first != end) {
+    std::cout << *first << " ";
+    print_vector(++first, end);
+  }
+}
+
+// ex 6.42
+std::string make_plural(size_t ctr, const std::string& word,
+                        const std::string& ending = "s") {
+  return (ctr > 1) ? word + ending : word;
+}
+
+// ex 6.54
+int func(int a, int b);
+using pFunc1 = decltype(func)*;
+using pFunc2 = decltype(func);
+using pFunc3 = int (*)(int a, int b);
+std::vector<pFunc1> vec1;
+std::vector<pFunc2*> vec2;
+std::vector<pFunc3> vec3;
+
+// ex 6.55
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+int multiply(int a, int b) { return a * b; }
+int divide(int a, int b) { return b != 0 ? a / b : 0; }
+
+// ex 6.56
+std::vector<decltype(func)*> vec{add, subtract, multiply, divide};
+for (auto f : vec) {
+  std::cout << f(2, 2) << std::endl;
+}
+
+int main() {}
