@@ -51,6 +51,7 @@ bool compare(matrix &,matrix &);
 vector<int> change_val(int, vector<int>::iterator);
 ```
 
+<<<<<<< HEAD
 ## 6.25
 ```cpp
 int main(int argc,char **argv){
@@ -124,3 +125,5 @@ decltype(arrStr)& arrPtr(int i){
 - 前两个ok，都是底层const并不重复
 - 第三个时顶层const会重复定义
 
+=======
+>>>>>>> fdec3e2798ee0aac40e2c095be4087ca0105a113

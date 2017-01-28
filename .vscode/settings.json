@@ -1,6 +1,10 @@
 {
     "editor.formatOnType": true,
+<<<<<<< HEAD
     "files.associations": {
       "xstring": "cpp"
     }
+=======
+    "files.associations": {}
+>>>>>>> fdec3e2798ee0aac40e2c095be4087ca0105a113
   }

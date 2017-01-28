@@ -62,12 +62,31 @@ bool anyUpper(const std::string& str) {
 
 // ex 6.21
 int biggerOne(int const a, const int* b) { return a > *b ? a : *b; }
+<<<<<<< HEAD
 
 // ex 6.22
 void swapAddress(int** a, int** b) {
   int* temp = *b;
   *b = *a;
   *a = temp;
+=======
+
+// ex 6.22
+void swapAddress(int** a, int** b) {
+  int* temp = *b;
+  *b = *a;
+  *a = temp;
+}
+
+int main() {
+  int a = 0, b = 2;
+  int* c = &a;
+  int* d = &b;
+  swapAddress(&c, &d);
+
+  std::cout << *c << " " << *d << std::endl;
+  system("pause");
+>>>>>>> fdec3e2798ee0aac40e2c095be4087ca0105a113
 }
 void swapAddress(int*& lft, int*& rht) {
   auto temp = lft;
